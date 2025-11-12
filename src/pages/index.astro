@@ -1,11 +1,69 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
+import '../styles/global.css'
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+
 ---
 
 <Layout>
-	<Welcome />
+	<main class="max-w-3xl w-full bg-white shadow-2xl rounded-2xl overflow-hidden my-10">
+        
+        <header class="p-8 md:p-12 text-center bg-gray-900 text-white">
+            <h1 class="text-4xl md:text-5xl font-black tracking-tighter mb-4">¡Estás Invitado!</h1>
+            <p class="text-xl md:text-2xl font-light text-gray-300">A mi Defensa Pública de Grado</p>
+        </header>
+
+        <div class="p-8 md:p-10">
+            
+            <section class="mb-8">
+                <h2 class="text-sm font-semibold uppercase text-blue-600 tracking-wider mb-4">Proyecto de Grado</h2>
+                <h3 class="text-2xl md:text-3xl font-bold text-gray-900 leading-tight">
+                    SISTEMA WEB PARA LA EVALUACIÓN TÉCNICA DE 
+                    ENTRENAMIENTOS EN LA ASOCIACIÓN DE POWERLIFTING 
+                    BOLIVIA (APB)
+                </h3>
+                <p class="mt-4 text-lg text-gray-600">Presentado por:</p>
+                <p class="text-xl font-semibold">Juan Manuel Gandarillas Ojalvo</p>
+            </section>
+
+            <section class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center mb-10">
+                <div class="bg-gray-50 p-5 rounded-lg shadow-inner">
+                    <span class="text-sm font-semibold text-gray-500">FECHA</span>
+                    <p class="text-lg font-bold text-blue-700">26 de Noviembre 2025</p>
+                </div>
+                <div class="bg-gray-50 p-5 rounded-lg shadow-inner">
+                    <span class="text-sm font-semibold text-gray-500">HORA</span>
+                    <p class="text-lg font-bold text-blue-700">18:30</p>
+                </div>
+                <div class="bg-gray-50 p-5 rounded-lg shadow-inner">
+                    <span class="text-sm font-semibold text-gray-500">LUGAR</span>
+                    <p class="text-lg font-bold text-blue-700">Por definir</p>
+                </div>
+            </section>
+            <section class="bg-blue-50 border border-blue-200 rounded-xl p-6 text-blue-900">
+                <h4 class="text-xl font-bold mb-3">Celebrando un nuevo comienzo</h4>
+                <p class="text-base mb-4">
+                    Culminar esta etapa es un gran logro, pero también es el emocionante inicio de mi carrera profesional. Empezar es un desafío, y aprecio enormemente tu deseo de celebrar este hito conmigo.
+                </p>
+                <p class="text-base font-medium">
+                    Si has pensado en un obsequio, te comparto con cariño que los detalles más significativos serán aquellos que me acompañen a largo plazo, cosas que sirvan para construir un futuro mejor y traigan buena prosperidad.
+                </p>
+            </section>
+
+            <section class="text-center mt-10">
+                <p class="mb-4 text-gray-600">Para quienes me han preguntado, he preparado algunas ideas:</p>
+                <a href="/deseo" 
+                   rel="noopener noreferrer" 
+                   class="inline-block bg-gray-900 text-white font-bold text-lg px-10 py-4 rounded-lg shadow-lg hover:bg-blue-700 transition-all duration-300 transform hover:scale-105">
+                    Ver mi Lista de Deseos
+                </a>
+            </section>
+        </div>
+
+        <footer class="p-8 text-center bg-gray-100 border-t border-gray-200">
+            <p class="text-lg font-semibold text-gray-700">¡Tu presencia  será mi mayor alegría!</p>
+            <p class="mt-1 text-gray-500">&copy; 2025 - Creado con ❤️ por JManuDev</p>
+        </footer>
+
+    </main>
 </Layout>

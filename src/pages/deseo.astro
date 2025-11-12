@@ -1,0 +1,71 @@
+---
+import Layout from '../layouts/Layout.astro';
+import '../styles/global.css'
+import { getCollection } from 'astro:content';
+
+const listas = await getCollection('listas');
+
+---
+
+<Layout> 
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10"> 
+        <header class="text-center my-10 md:my-16">
+            <h1 class="text-4xl md:text-5xl font-black tracking-tighter text-gray-900 mb-4">Mi Lista de Deseos</h1>
+            <p class="text-xl text-gray-600 max-w-2xl mx-auto">Gracias por considerar un obsequio. Aquí hay algunas ideas que me ayudarían mucho en esta nueva etapa profesional.</p>
+        </header>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"> 
+            {
+                listas.map(lista=>{
+                    const {slug,data} = lista
+                    const {title, categoria, precio, img, descripcion, comprar} = data 
+                    return(
+                        <article>
+                            <div class="bg-white rounded-2xl shadow-xl overflow-hidden flex flex-col transition-transform duration-300 hover:scale-[1.02] h-full">
+                                <img class="w-full h-56 object-contain" 
+                                     src={'/' + img} 
+                                     alt={`Imagen de ${title}`}>
+                                
+                                <div class="p-6 flex-grow flex flex-col">
+                                    <span class="inline-block bg-blue-100 text-blue-800 text-xs font-semibold px-3 py-1 rounded-full mb-3 uppercase tracking-wider">
+                                        {categoria}
+                                    </span>
+                                    <h3 class="text-xl font-bold text-gray-900 mb-2">{title}</h3>
+                                    <p class="text-gray-600 text-sm mb-4 flex-grow">
+                                        {descripcion}
+                                    </p>
+
+                                    <p class="text-lg font-semibold text-gray-800 mb-5">
+                                        Precio Aprox: Bs.{precio}
+                                    </p>
+                                    
+                                    {comprar && (comprar.startsWith('http://') || comprar.startsWith('https://')) ? (
+                                        <a href={comprar} 
+                                            target="_blank" 
+                                            rel="noopener noreferrer" 
+                                            class="block text-center w-full bg-gray-900 text-white font-bold px-6 py-3 rounded-lg shadow-md hover:bg-blue-700 transition-all duration-300">
+                                            Ver opción de compra
+                                        </a>
+                                    ) : (
+                                          <div class="text-sm text-center text-gray-600 bg-gray-50 p-4 rounded-lg border border-gray-200">
+                                      	    Aún no tengo un link directo, ¡pero puedes buscarlo en tu tienda favorita!
+                                        </div>
+                                   )}
+                                    
+                                </div>
+                            </div>
+                        </article>
+                )
+                })
+            }
+        </div>
+            <footer class="text-center my-12">
+        <a href="/" 
+           class="text-blue-600 font-medium hover:underline">
+            &larr; Volver a la invitación
+        </a>
+    </footer>
+
+    </main> 
+    
+</Layout>
