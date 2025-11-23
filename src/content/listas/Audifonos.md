@@ -1,8 +1,8 @@
 ---
 title: Audifonos inalambricos
 categoria: Tecnologia
-precio: 200-220
-img: Audifonos.jpg
-descripcion: Perfectos para concentrarme al programar, escuchar música o relajarme después de un día largo. Un buen par de audífonos siempre es un gran compañero.
-comprar: https://www.facebook.com/share/1AnZBnYrHM/
+precio: 1500-1680
+img: sillagamer.jpg
+descripcion: Perfecto para concentrarme al programar, ya podré estar cómodamente en programando por horas sin dolores de espalda.
+comprar: https://www.facebook.com/share/17QnpGSNew/
 ---
