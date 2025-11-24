@@ -1,5 +1,5 @@
 ---
-title: Audifonos inalambricos
+title: Silla Hergonomica
 categoria: Tecnologia
 precio: 1500-1680
 img: sillagamer.jpg
